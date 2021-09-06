@@ -53,25 +53,34 @@ export class AppComponent {
 
   getAnswer(): void {
     this.calculationString = this.mainDisplayText;
+    // tslint:disable-next-line:no-eval
+    console.log(eval('3+4+6'));
     this.operand2 = parseFloat(this.mainDisplayText.split(this.operator)[1]);
     if (this.operator === '/') {
-      this.mainDisplayText = (this.operand1 / this.operand2).toString();
+      // tslint:disable-next-line:no-eval
+      this.mainDisplayText = eval(String(this.operand1 / this.operand2)).toString();
       if (this.mainDisplayText.length > 9) {
         this.mainDisplayText = this.mainDisplayText.substr(0, 9);
       }
       this.lastExpression.push(this.operand1 + ' / ' + this.operand2 + ' = ' + (this.operand1 / this.operand2));
     } else if (this.operator === 'x') {
-      this.mainDisplayText = (this.operand1 * this.operand2).toString();
+      // this.mainDisplayText = (this.operand1 * this.operand2).toString();
+      // tslint:disable-next-line:no-eval
+      this.mainDisplayText = eval(String(this.operand1 * this.operand2)).toString();
       this.lastExpression.push(this.operand1 + ' * ' + this.operand2 + ' = ' + (this.operand1 * this.operand2));
       if (this.mainDisplayText.length > 9) {
         this.mainDisplayText = 'ERROR';
         this.subDisplayText = 'Range Exceeded';
       }
     } else if (this.operator === '-') {
-      this.mainDisplayText = (this.operand1 - this.operand2).toString();
+      // this.mainDisplayText = (this.operand1 - this.operand2).toString();
+      // tslint:disable-next-line:no-eval
+      this.mainDisplayText = eval(String(this.operand1 - this.operand2)).toString();
       this.lastExpression.push(this.operand1 + ' - ' + this.operand2 + ' = ' + (this.operand1 - this.operand2));
     } else if (this.operator === '+') {
-      this.mainDisplayText = (this.operand1 + this.operand2).toString();
+      // this.mainDisplayText = (this.operand1 + this.operand2).toString();
+      // tslint:disable-next-line:no-eval
+      this.mainDisplayText = eval(String(this.operand1 + this.operand2)).toString();
       this.lastExpression.push(this.operand1 + ' + ' + this.operand2 + ' = ' + (this.operand1 + this.operand2));
       if (this.mainDisplayText.length > 9) {
         this.mainDisplayText = 'ERROR';
