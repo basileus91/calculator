@@ -9,3 +9,9 @@ The following steps was done:
 5. **RandomNumberService** for generating random number
 6. **rand()** function to handle random number generation
 7. I divided the main display in two in order to show current operation and past operations.
+
+Notes: 
+Steps to run in order to see the results: 
+Please run the app as per Readme instructions
+Do operation between numbers, after each operation please press AC
+Rand will make a request to get a Rand number
